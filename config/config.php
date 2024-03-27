@@ -11,4 +11,4 @@ define('__URLSUBFOLDER__', '');
 define('__DBHOST__', 'localhost');
 define('__DBUSER__', 'root');
 define('__DBPASS__', 'root');
-define('__DBNAME__', 'project');
+define('__DBNAME__', 'netatlas');

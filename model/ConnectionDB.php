@@ -2,7 +2,7 @@
 
 require_once(__ROOT__ . "/config/config.php");
 
-class ConnexionDB
+class ConnectionDB
 {
     //Instance de la classe PDO
     private $PDOInstance = null;
@@ -38,7 +38,7 @@ class ConnexionDB
     public static function getInstance()
     {
         if (is_null(self::$instance)) {
-            self::$instance = new ConnexionDB();
+            self::$instance = new ConnectionDB();
         }
         return self::$instance;
     }
