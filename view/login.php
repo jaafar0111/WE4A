@@ -7,12 +7,14 @@
     <meta name="keywords" content="" />
 	<title>Winku Social Network Toolkit</title>
     <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
+	<link rel="stylesheet" href="../css/mdb.min.css">
     <link rel="stylesheet" href="../css/main.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/color.css">
     <link rel="stylesheet" href="../css/responsive.css">
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+	<link rel="stylesheet"type="text/css" href="../css/sweetAlert.css" />
 </head>
 <body>
 <!--<div class="se-pre-con"></div>-->
@@ -40,14 +42,30 @@
 							<p>
 								Don’t use Winku Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
 							</p>
-						<form method="post">
+						<form method="post" action="./login.php" autocomplete="off">
+							<?php
+								require_once("./loginStatus.php");
+								require_once("./connect.php");
+								$message = "Login successfull";
+								$clicked = true;
+
+								if($clicked){
+									$loginStatus = new LoginStatus($sQLConn);
+									if($loginStatus->loginAttempted) {
+										echo'<div class="alert-danger">'.$loginStatus->errorText.'</div>';
+									}
+									else if($loginStatus->loginSuccessful){
+										echo'<div class="alert-success">'.$message.'</div>';
+									}
+								}
+							?>
 							<div class="form-group">	
-							  <input type="text" id="input" required="required"/>
-							  <label class="control-label" for="input">Username</label><i class="mtrl-select"></i>
+							  <input type="text" id="username" required="required" name="username"/>
+							  <label class="control-label" for="username">Username</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="password" required="required"/>
-							  <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+							  <input type="password" required="required" id="password" name="password"/>
+							  <label class="control-label" for="password">Password</label><i class="mtrl-select"></i>
 							</div>
 							<div class="checkbox">
 							  <label>
@@ -56,30 +74,35 @@
 							</div>
 							<a href="#" title="" class="forgot-pwd">Forgot Password?</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signin" type="button"><span>Login</span></button>
+								<button class="mtr-btn signin" type="submit"><span>Login<?php global $clicked; $clicked=false; ?></span></button>
 								<button class="mtr-btn signup" type="button"><span>Register</span></button>
 							</div>
 						</form>
+						
 					</div>
 					<div class="log-reg-area reg">
 						<h2 class="log-title">Register</h2>
 							<p>
-								Don’t use Winku Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
+								Welcome to Winku
 							</p>
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<div class="form-group">	
-							  <input type="text" required="required"/>
-							  <label class="control-label" for="input">First & Last Name</label><i class="mtrl-select"></i>
+							  <input type="text" required="required" name="firstname"/>
+							  <label class="control-label" for="firstname" autocomplete="false">First Name</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="text" required="required"/>
-							  <label class="control-label" for="input">User Name</label><i class="mtrl-select"></i>
+							  <input type="text" required="required" name="lastname"/>
+							  <label class="control-label" for="lastname" autocomplete="false">Last Name</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="password" required="required"/>
-							  <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+							  <input type="text" required="required" name="username"/>
+							  <label class="control-label" for="username" autocomplete="false">User Name</label><i class="mtrl-select"></i>
 							</div>
-							<div class="form-radio">
+							<div class="form-group">	
+							  <input type="password" required="required" name="password" type="password" />
+							  <label class="control-label" for="password" autocomplete="false">Password</label><i class="mtrl-select"></i>
+							</div>
+							<!-- <div class="form-radio">
 							  <div class="radio">
 								<label>
 								  <input type="radio" name="radio" checked="checked"/><i class="check-box"></i>Male
@@ -90,17 +113,14 @@
 								  <input type="radio" name="radio"/><i class="check-box"></i>Female
 								</label>
 							  </div>
-							</div>
+							</div> -->
 							<div class="form-group">	
 							  <input type="text" required="required"/>
 							  <label class="control-label" for="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c29010d05002c">[email&#160;protected]</a></label><i class="mtrl-select"></i>
 							</div>
 							<div class="checkbox">
-							  <label>
-								<input type="checkbox" checked="checked"/><i class="check-box"></i>Accept Terms & Conditions ?
-							  </label>
 							</div>
-							<a href="#" title="" class="already-have">Already have an account</a>
+							<a href="./login.php" title="" class="already-have">Already have an account</a>
 							<div class="submit-btns">
 								<button class="mtr-btn signup" type="button"><span>Register</span></button>
 							</div>
@@ -112,8 +132,13 @@
 	</div>
 </div>
 	
-	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.min.js"></script>
-	<script src="../js/script.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.min.js"></script>
+<script src="../js/script.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script src="../../js/mdb.umd.min.js"></script>
+<script src="../js/sweetAlert.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>	
 
