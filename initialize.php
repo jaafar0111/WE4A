@@ -1,6 +1,10 @@
 <?php
-include("./config/config.php");
+ob_start();
+session_start();
 
-require_once(__ROOT__ . "/model/ConnexionDB.php");
+include("config.php");
+require_once(__ROOT__ . "/model/ConnectionDB.php");
+
 $dbInstance =  ConnectionDB::getInstance();
-?>
+
+ob_end_flush();

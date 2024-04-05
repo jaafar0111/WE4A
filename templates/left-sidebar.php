@@ -3,7 +3,7 @@
     <ul class="naves">
         <li>
             <i class="ti-clipboard"></i>
-            <a href="newsfeed.html" title="">Actualités</a>
+            <a href="./" title="">Actualités</a>
         </li>
 
         <li>
@@ -33,7 +33,7 @@
 
         <li>
             <i class="fa fa-question-circle-o"></i>
-            <a href="insights.html" title="">faq</a>
+            <a href="insights.html" title="">foire aux questions</a>
         </li>
 
         <li>

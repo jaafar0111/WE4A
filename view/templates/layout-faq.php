@@ -1,5 +1,5 @@
 <?php
-require_once("./initialize.php");
+require_once("../initialize.php");
 
 //Header include
 include(__ROOT__ . "/view/templates/header.php");
@@ -8,6 +8,25 @@ include(__ROOT__ . "/view/templates/header.php");
 include(__ROOT__ . "/view/templates/topbar.php");
 
 ?>
+
+<section>
+		<div class="gap2 color-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="top-banner">
+							<i><img src="images/faq.png" alt=""></i>
+							<h1>Foire Aux Questions</h1>
+						</div>
+						<nav class="breadcrumb">
+						  <a class="breadcrumb-item" href="index-2.html">Accueil</a>
+						  <span class="breadcrumb-item active">FAQ</span>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 <section>
 	<div class="gap gray-bg">
@@ -23,20 +42,13 @@ include(__ROOT__ . "/view/templates/topbar.php");
 							</aside>
 						</div><!-- sidebar -->
 
-						<div class="col-lg-6">
+						<div class="col-lg-9">
 
 							<!-- content -->
 							<?php echo $pageContent; ?>
 
 						</div><!-- centerl meta -->
 
-						<div class="col-lg-3">
-							<aside class="sidebar static">
-								<!-- OWNER PAGE BLOC -->
-								<?php include(__ROOT__ . "/view/templates/right-sidebar.php"); ?>
-
-							</aside>
-						</div><!-- sidebar -->
 					</div>
 				</div>
 			</div>

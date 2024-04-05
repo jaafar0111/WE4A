@@ -1,6 +1,6 @@
 <?php
 
-require_once(__ROOT__ . "/config/config.php");
+//require_once(__ROOT__ . "/config/config.php");
 
 class ConnectionDB
 {
@@ -28,9 +28,8 @@ class ConnectionDB
         try {
             $this->PDOInstance = new PDO('mysql:host=' . self::DEFAULT_SQL_HOST . ';dbname=' . self::DEFAULT_SQL_DTB, self::DEFAULT_SQL_USER, self::DEFAULT_SQL_PASS);
             $this->PDOInstance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            echo "Erreur de connexion à la BD : " . $e->getMessage();
         }
     }
 

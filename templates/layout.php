@@ -2,10 +2,10 @@
 require_once("./initialize.php");
 
 //Header include
-include(__ROOT__ . "/view/templates/header.php");
+include(__ROOT__ . "/templates/header.php");
 
 //Topbar include
-include(__ROOT__ . "/view/templates/topbar.php");
+include(__ROOT__ . "/templates/topbar.php");
 
 ?>
 
@@ -18,7 +18,7 @@ include(__ROOT__ . "/view/templates/topbar.php");
 						<div class="col-lg-3">
 							<aside class="sidebar static">
 								<!-- MENU Include -->
-								<?php include(__ROOT__ . "/view/templates/left-sidebar.php"); ?>
+								<?php include(__ROOT__ . "/templates/left-sidebar.php"); ?>
 
 							</aside>
 						</div><!-- sidebar -->
@@ -33,7 +33,7 @@ include(__ROOT__ . "/view/templates/topbar.php");
 						<div class="col-lg-3">
 							<aside class="sidebar static">
 								<!-- OWNER PAGE BLOC -->
-								<?php include(__ROOT__ . "/view/templates/right-sidebar.php"); ?>
+								<?php include(__ROOT__ . "/templates/right-sidebar.php"); ?>
 
 							</aside>
 						</div><!-- sidebar -->
@@ -46,5 +46,5 @@ include(__ROOT__ . "/view/templates/topbar.php");
 
 <?php
 //Footer include
-include(__ROOT__ . "/view/templates/footer.php");
+include(__ROOT__ . "/templates/footer.php");
 ?>
