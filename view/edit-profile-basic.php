@@ -554,7 +554,7 @@
 									<div class="editing-info">
 										<h5 class="f-title"><i class="ti-info-alt"></i> Edit Basic Information</h5>
 
-										<form method="post">
+										<form method="post" action="traitement.php">
 											<div class="form-group half">	
 											  <input type="text" id="input" required="required"/>
 											  <label class="control-label" for="input">First Name</label><i class="mtrl-select"></i>
@@ -919,7 +919,7 @@
 											</div>
 											<div class="submit-btns">
 												<button type="button" class="mtr-btn"><span>Cancel</span></button>
-												<button type="button" class="mtr-btn"><span>Update</span></button>
+												<button type="Submit" name="submit" class="mtr-btn"><span>Update</span></button>
 											</div>
 										</form>
 									</div>

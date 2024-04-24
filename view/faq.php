@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+//include("config.php");
 $pageTitle = "NetAtlas - Accueil";
 ob_start();
 ?>
