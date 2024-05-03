@@ -43,7 +43,7 @@
 							<p>
 								Don’t use Winku Yet? <a href="#" title="">Take the tour</a> or <a href="#" title="">Join now</a>
 							</p>
-						<form method="post" action="./login.php" autocomplete="off">
+						<form method="post" action="http://localhost/WE4A/Controllers/login.php">
 							<?php
 								require_once("./loginStatus.php");
 								require_once("./connect.php");
@@ -75,7 +75,7 @@
 							</div>
 							<a href="#" title="" class="forgot-pwd">Forgot Password?</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signin" type="submit"><span>Login<?php global $clicked; $clicked=false; ?></span></button>
+								<button class="mtr-btn signin" type="submit" name="submit"><span>Login</span></button>
 								<button class="mtr-btn signup" type="button"><span>Register</span></button>
 							</div>
 						</form>

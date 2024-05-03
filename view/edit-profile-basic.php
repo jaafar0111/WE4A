@@ -554,21 +554,21 @@
 									<div class="editing-info">
 										<h5 class="f-title"><i class="ti-info-alt"></i> Edit Basic Information</h5>
 
-										<form method="post" action="traitement.php">
+										<form method="POST" action="http://localhost/WE4A/Controllers/edit-profile-basic.php">
 											<div class="form-group half">	
-											  <input type="text" id="input" required="required"/>
+											  <input type="text" id="input" required="required" name="Firstname"/>
 											  <label class="control-label" for="input">First Name</label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group half">	
-											  <input type="text" required="required"/>
+											  <input type="text" required="required" name="Lastname"/>
 											  <label class="control-label" for="input">Last Name</label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group">	
-											  <input type="text" required="required"/>
+											  <input type="text" required="required" name="email"/>
 											  <label class="control-label" for="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b0e262a22270b">[email&#160;protected]</a></label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group">	
-											  <input type="text" required="required"/>
+											  <input type="text" required="required" name="phone"/>
 											  <label class="control-label" for="input">Phone No.</label><i class="mtrl-select"></i>
 											</div>
 											<div class="dob">
@@ -656,7 +656,7 @@
 											  </div>
 											</div>
 											<div class="form-group">	
-											  <input type="text" required="required"/>
+											  <input type="text" />
 											  <label class="control-label" for="input">City</label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group">	
@@ -914,7 +914,7 @@
 											  </select>
 											</div>
 											<div class="form-group">	
-											  <textarea rows="4" id="textarea" required="required"></textarea>
+											  <textarea rows="4" id="textarea" required="required" name="selfIntro"></textarea>
 											  <label class="control-label" for="textarea">About Me</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
